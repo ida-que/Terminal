@@ -1,4 +1,4 @@
-FOLDER="/d/terminal_hw1/folder_4"
+FOLDER="folder_4"
 
 rm -rf $FOLDER 						&& echo "rm -rf ${FOLDER}" \
 && mkdir $FOLDER 					&& echo "mkdir ${FOLDER}" \
