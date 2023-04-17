@@ -2,6 +2,27 @@
 
 
 (All the commands are written in GitBash)
+
+[1. Check where am I](#1-check-where-am-i-)<br/>
+[2. Make a new folder](#2-make-a-new-folder-)<br/>
+[3. Go to the created folder](#3-go-to-the-created-folder-)<br/>
+[4. Make 3 new folders](#4-make-3-new-folders-)<br/>
+[5. Go to any of these 3 folders](#5-go-to-any-of-these-3-folders-)<br/>
+[6. Create 5 files (3 x .txt, 2 x .json)](#6-create-5-files--3-x-txt-2-x-json--)<br/>
+[7. Create 3 new folders](#7-create-3-new-folders-)<br/>
+[8. Show the list of current folder elements](#8-show-the-list-of-current-folder-elements-)<br/>
+[9-11. Open one of txt files & Write anything in this file & Save and quit](#9-open-one-of-txt-files-)<br/>
+[12. Go to the directory located 1 level above](#12-go-to-the-directory-located-1-level-above-)<br/>
+[13. Move any 2 files to any folder](#13-move-any-2-files-to-any-folder-)<br/>
+[14. Copy any 2 files to any folder](#14-copy-any-2-files-to-any-folder-)<br/>
+[15. Find a file by name](#15-find-a-file-by-name-)<br/>
+[16. Show file content in real time, filtered by a keyword](#16-show-file-content-in-real-time-filtered-by-a-keyword-)<br/>
+[17. Show several of the first lines from the text file](#17-show-several-of-the-first-lines-from-the-text-file--showing-10-lines-by-default--)<br/>
+[18. Show several of the last lines from the text file](#18-show-several-of-the-last-lines-from-the-text-file-)<br/>
+[19. Show content of a large file](#19-show-content-of-a-large-file-)<br/>
+[20. Show current date and time](#20-show-current-date-and-time-)<br/>
+[21. Additional tasks](#21-additional-tasks-)<br/>
+
 ### 1. Check where am I:
 The `pwd` command allows us to check the current directory:
 ```
@@ -92,22 +113,29 @@ Vim editor allows us to add information to the file
 - press `Esc`, then type `:wq` to save and quit
 
 ### 12. Go to the directory located 1 level above:
+To go 1 level above (in this case, we go to the **terminal_hw1** directory), add `..` after a `cd` command.
+```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1/folder_1
 $ cd ..
-
-### 13. Move any 2 files to any folder (e.g. move 2 json files from folder_1 to folder_2):
+```
+### 13. Move any 2 files to any folder:
+For example, we want to move 2 json files from **folder_1** to **folder_2**.
+```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ mv -t folder_2 folder_1/file1.json folder_1/file2.json
-
-### 14. Copy any 2 files to any folder (e.g. copy 2 json files from folder_2 to folder_3):
+```
+### 14. Copy any 2 files to any folder:
+Now let's try e.g. copying 2 .json files from **folder_2** to **folder_3**
+```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ cp folder_2/{file1.json,file2.json} folder_3
-
+```
 ### 15. Find a file by name:
+```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ find . -name notes3.txt
 ./folder_1/notes3.txt
-
+```
 ### 16. Show file content in real time, filtered by a keyword:
 #### Step 1: use this combination of `tail` and `grep` for e.g. "can" keyword.
 ```
@@ -119,21 +147,27 @@ I can buy myself flowers
 #### Step 2: open file manually from GUI (e.g. open txt file with Notepad)
 
 #### Step 3: write a new line containing the keyword (can be several lines):
+```
 I can get no satisfaction
 I believe I can fly
-[press Enter]
-[save the changes by pressing Ctrl+S]
+```
+Press `Enter` and save the changes by pressing `Ctrl+S`.
 
 #### Step 4: As a result, all the lines with the keyword are added and visible in the console:
+```
 I can buy myself flowers
 I can get no satisfaction
 I believe I can fly
-[press Ctrl+C to quit the command]
-
-### 17. Show several of the first lines from the text file (showing 10 lines by default):
+```
+Press `Ctrl+C` to quit the command.
+### 17. Show several of the first lines from the text file:
+A simple `head` command can show us the first lines (10 lines by default).
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ head ./folder_1/notes1.txt
+```
+As a result, we get the following lines:
+```
 I can buy myself flowers
 I want to break free
 I can get no satisfaction
@@ -145,10 +179,14 @@ Billie Jean is not my lover
 I just wanna rock
 Sweet dreams are made of this
 ```
-### 18. Show several of the last lines from the text file (showing 10 lines by default):
+### 18. Show several of the last lines from the text file:
+Like the `head` command, this `tail` command shows us the last lines (also 10 by default).
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ tail ./folder_1/notes1.txt
+```
+And we get the very last 10 lines in the response:
+```
 I believe I can fly
 Somewhere over the rainbow
 Cut muy life into pieces
@@ -161,7 +199,7 @@ In the town where I was born
 When routine bites hard
 ```
 ### 19. Show content of a large file:
-Imagine that we don`t have any large file. so we can download it from the web or create by ourselves.
+Imagine that we don`t have any large file, so we can download it from the web or create by ourselves.
 #### Step 1.
 Option 1: download a sample large file to the current directory manually in GUI (e.g. [here](https://www.learningcontainer.com/sample-text-file/)). <br/>
 
@@ -178,21 +216,29 @@ $ less lorem_ipsum
 ```
 Next, we see this file content and can navigate. To make navigation easier in this case, you can e.g.:<br/>
 - type `-N` to show string numbers
-- type `/Lorem` to find all "Lorem"  in file
+- type `/Lorem` to find all "Lorem" words in this file
 - after the previous command, type `/` and `Enter` to go to the next found keyword in the file
 - press `space` to go to the next page
 ### 20. Show current date and time:
+The `date` command solves this task very efficiently.
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ date
+```
+The response:
+```
 Sun Apr 16 15:13:58     2023
 ```
-### 21. Additional tasks
+### 21. Additional tasks:
 #### - Send an http request to the server http://162.55.220.72:5005/terminal-hw-request
 Let's try to send e.g. a `GET` HTTP request to this server.
+With a `curl` command, we can send any response. Here, we additionally specify the type of HTTP response with `-X GET`:
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ curl -X GET hhttp://162.55.220.72:5005/terminal-hw-request
+```
+Server response:
+```
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   232  100   232    0     0   2206      0 --:--:-- --:--:-- --:--:--  2209<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
@@ -203,4 +249,4 @@ $ curl -X GET hhttp://162.55.220.72:5005/terminal-hw-request
 The server shows `404 Not Found` status code. As well as I am concerned, it means that this server itself is working, but we got such a response that the page is not found.
 #### - Write a bash script which does the steps above (# 3-8, # 13)
 You can look at the script code [here](https://github.com/ida-que/hw-portfolio/blob/homework_1/homework_1/script.sh)<br/>
-*Note: to run this script from the directory where the file is located, use `./script.sh` command.*
+*Note: to run this script from the directory where the file is located, just type `./script.sh`.*
