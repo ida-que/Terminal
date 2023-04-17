@@ -202,4 +202,5 @@ $ curl -X GET hhttp://162.55.220.72:5005/terminal-hw-request
 ```
 The server shows `404 Not Found` status code. As well as I am concerned, it means that this server itself is working, but we got such a response that the page is not found.
 #### - Write a bash script which does the steps above (# 3-8, # 13)
-You can look at the script code [here](https://github.com/ida-que/hw-portfolio/blob/homework_1/homework_1/script.sh)
+You can look at the script code [here](https://github.com/ida-que/hw-portfolio/blob/homework_1/homework_1/script.sh)<br/>
+*Note: to run this script from the directory where the file is located, use `./script.sh` command.*
