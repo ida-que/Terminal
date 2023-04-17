@@ -3,26 +3,6 @@
 
 (All the commands are written in GitBash)
 
-[1. Check where am I](#1-check-where-am-i-)<br/>
-[2. Make a new folder](#2-make-a-new-folder-)<br/>
-[3. Go to the created folder](#3-go-to-the-created-folder-)<br/>
-[4. Make 3 new folders](#4-make-3-new-folders-)<br/>
-[5. Go to any of these 3 folders](#5-go-to-any-of-these-3-folders-)<br/>
-[6. Create 5 files (3 x .txt, 2 x .json)](#6-create-5-files--3-x-txt-2-x-json--)<br/>
-[7. Create 3 new folders](#7-create-3-new-folders-)<br/>
-[8. Show the list of current folder elements](#8-show-the-list-of-current-folder-elements-)<br/>
-[9-11. Open one of txt files & Write anything in this file & Save and quit](#9-open-one-of-txt-files-)<br/>
-[12. Go to the directory located 1 level above](#12-go-to-the-directory-located-1-level-above-)<br/>
-[13. Move any 2 files to any folder](#13-move-any-2-files-to-any-folder-)<br/>
-[14. Copy any 2 files to any folder](#14-copy-any-2-files-to-any-folder-)<br/>
-[15. Find a file by name](#15-find-a-file-by-name-)<br/>
-[16. Show file content in real time, filtered by a keyword](#16-show-file-content-in-real-time-filtered-by-a-keyword-)<br/>
-[17. Show several of the first lines from the text file](#17-show-several-of-the-first-lines-from-the-text-file--showing-10-lines-by-default--)<br/>
-[18. Show several of the last lines from the text file](#18-show-several-of-the-last-lines-from-the-text-file-)<br/>
-[19. Show content of a large file](#19-show-content-of-a-large-file-)<br/>
-[20. Show current date and time](#20-show-current-date-and-time-)<br/>
-[21. Additional tasks](#21-additional-tasks-)<br/>
-
 ### 1. Check where am I:
 The `pwd` command allows us to check the current directory:
 ```
@@ -54,13 +34,13 @@ $ mkdir folder_1 folder_2 folder_3
 ```
 Done, we've just made 3 new folders with names **folder_1**, **folder_2** and **folder_3**.
 ### 5. Go to any of these 3 folders:
-So, we already know to do here, do we? For instance, we change directory to **folder_1**.
+So, we already know what to do here, do we? For instance, we change directory to **folder_1**.
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ cd folder_1
 ```
 ### 6. Create 5 files (3 x .txt, 2 x .json):
-To create files, `touch` command is the best option. Like in case of using `mkdir`, you can write the names separated by a space, but ***remember to add formats***.
+To create files, `touch` command is the best option. Like in case of using `mkdir`, you can write the names separated by a `space`, but ***remember to add formats***.
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1/folder_1
 $ touch file1.json  file2.json  notes1.txt  notes2.txt  notes3.txt
@@ -76,6 +56,9 @@ As you see, we are still located in **folder_1**, but added more elements there.
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1/folder_1
 $ ls
+```
+In response, we should get:
+```
 file1.json  file2.json  notes1.txt  notes2.txt  notes3.txt  subfolder_1/  subfolder_2/  subfolder_3/
 ```
 
@@ -85,13 +68,16 @@ file1.json  file2.json  notes1.txt  notes2.txt  notes3.txt  subfolder_1/  subfol
 These 3 steps have more options.<br/>
 For example, we want to add some info to the **notes1.txt**. It is now empty.
 #### Option 1 is `cat >` command.
-This command rewrites the file, and we can use it if we definitely want to rewrite or have an empty file.<br/>
+This command rewrites the file, and we can use it if we definitely want to rewrite it or have an empty file.<br/>
 
 *Tip: If we want to add something to the file which is not empty, we use `cat >>` or `vim` instead (see below).*<br/>
-After adding text, press Ctrl+C to save and quit the file.
+After adding text, press `Ctrl+C` to save and quit the file.
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1/folder_1
 $ cat > notes1.txt
+```
+As a result, we can write something to the file directly from terminal. Let`s type the following lines:
+```
 I can buy myself flowers
 I want to break free
 Somewhere over the rainbow
@@ -131,9 +117,13 @@ eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ cp folder_2/{file1.json,file2.json} folder_3
 ```
 ### 15. Find a file by name:
+Use `find` command and the filename. To find in the whole directory, you can also type `.`. An example of looking for the **notes3.txt**:
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ find . -name notes3.txt
+```
+As a result, we see the path to this file:
+```
 ./folder_1/notes3.txt
 ```
 ### 16. Show file content in real time, filtered by a keyword:
@@ -141,9 +131,12 @@ $ find . -name notes3.txt
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ tail -f ./folder_1/notes1.txt | grep "can"
+```
+Result:
+```
 I can buy myself flowers
 ```
-
+*Note: remember that `tail` shows 10 last lines by default.* 
 #### Step 2: open file manually from GUI (e.g. open txt file with Notepad)
 
 #### Step 3: write a new line containing the keyword (can be several lines):
@@ -166,7 +159,7 @@ A simple `head` command can show us the first lines (10 lines by default).
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ head ./folder_1/notes1.txt
 ```
-As a result, we get the following lines:
+And we get the following lines:
 ```
 I can buy myself flowers
 I want to break free
