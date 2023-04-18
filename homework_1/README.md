@@ -225,19 +225,20 @@ Sun Apr 16 15:13:58     2023
 ### 21. Additional tasks:
 #### - Send an http request to the server http://162.55.220.72:5005/terminal-hw-request
 Let's try to send e.g. a `GET` HTTP request to this server.
-With a `curl` command, we can send any response. Here, we additionally specify the type of HTTP response with `-X GET`:
+With a `curl` command, we can send any response. Here, we additionally specify the type of HTTP request with `-X GET`:
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
-$ curl -X GET hhttp://162.55.220.72:5005/terminal-hw-request
+$ curl -X GET http://162.55.220.72:5005/terminal-hw-request
 ```
 Server response:
 ```
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100   232  100   232    0     0   2206      0 --:--:-- --:--:-- --:--:--  2209<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+100   232  100   232    0     0   2137      0 --:--:-- --:--:-- --:--:--  2148<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <title>404 Not Found</title>
 <h1>Not Found</h1>
 <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
 ```
 The server shows `404 Not Found` status code. As well as I am concerned, it means that this server itself is working, but we got such a response that the page is not found.
 #### - Write a bash script which does the steps above (# 3-8, # 13)
