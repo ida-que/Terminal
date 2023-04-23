@@ -1,2 +1,1 @@
-# hw-portfolio
-My homeworks portfolio
+Terminal homeworks
