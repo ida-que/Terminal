@@ -3,6 +3,7 @@
 
 (All the commands are written in GitBash)
 
+
 ### 1. Check where am I:
 The `pwd` command allows us to check the current directory:
 ```
@@ -40,11 +41,13 @@ eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1
 $ cd folder_1
 ```
 ### 6. Create 5 files (3 x .txt, 2 x .json):
-To create files, `touch` command is the best option. Like in case of using `mkdir`, you can write the names separated by a `space`, but ***remember to add formats***.
+
+To create multiple empty files, `touch` command is the best option. Like in case of using `mkdir`, you can write the names separated by a `space`, ***remember to add formats***.
 ```
 eanna@DESKTOP-D7U4KSH MINGW64 /d/terminal_hw1/folder_1
 $ touch file1.json  file2.json  notes1.txt  notes2.txt  notes3.txt
 ```
+*Note: `touch` command's main purpose is not creating files, but it is commonly used to do it.*
 ### 7. Create 3 new folders:
 Using `mkdir` here again.
 ```
@@ -243,4 +246,4 @@ Server response:
 The server shows `404 Not Found` status code. As well as I am concerned, it means that this server itself is working, but we got such a response that the page is not found.
 #### - Write a bash script which does the steps above (# 3-8, # 13)
 You can look at the script code [here](https://github.com/ida-que/hw-portfolio/blob/homework_1/homework_1/script.sh)<br/>
-*Note: to run this script from the directory where the file is located, just type `./script.sh`.*
+*Note: to run this script from the directory where the file is located, just type `./script.sh` or `/script.sh`.*
