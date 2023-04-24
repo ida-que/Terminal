@@ -1,4 +1,4 @@
-##Bash - homework 2
+## Bash - homework 2
 
 (All the commands are written in GitBash)
 
